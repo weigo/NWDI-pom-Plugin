@@ -1,4 +1,3 @@
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
@@ -7,14 +6,15 @@
   <parent>
     <groupId>org.jenkins-ci.plugins</groupId>
     <artifactId>plugin</artifactId>
-    <version>1.420</version>
+    <version>1.398</version>
   </parent>
 
   <groupId>org.arachna.netweaver</groupId>
   <artifactId>NWDI-pom-Plugin</artifactId>
   <version>1.2-SNAPSHOT</version>
   <name>NWDI plugins parent POM</name>
-
+  <packaging>pom</packaging>
+  
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <NWDI-config-plugin.version>0.0.1</NWDI-config-plugin.version>
@@ -47,7 +47,7 @@
     <dependency>
       <groupId>org.jenkins-ci.main</groupId>
       <artifactId>jenkins-core</artifactId>
-      <version>1.399</version>
+      <version>1.398</version>
       <type>pom</type>
       <scope>provided</scope>
       <exclusions>
@@ -94,9 +94,10 @@
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
-          <source>1.5</source>
-          <target>1.5</target>
+          <source>1.6</source>
+          <target>1.6</target>
           <compilerArgument>-g</compilerArgument>
+          <compilerArgument>-Xlint:unchecked</compilerArgument>
         </configuration>
         <version>2.3.1</version>
       </plugin>
