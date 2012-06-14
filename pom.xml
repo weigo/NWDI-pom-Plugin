@@ -1,41 +1,34 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+>
   <modelVersion>4.0.0</modelVersion>
-
   <parent>
     <groupId>org.jenkins-ci.plugins</groupId>
     <artifactId>plugin</artifactId>
     <version>1.446</version>
   </parent>
-
   <groupId>org.arachna.netweaver</groupId>
   <artifactId>NWDI-pom-Plugin</artifactId>
   <version>1.3-SNAPSHOT</version>
   <name>NWDI plugins parent POM</name>
   <packaging>pom</packaging>
-
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <NWDI-config-plugin.version>1.0.1-SNAPSHOT</NWDI-config-plugin.version>
   </properties>
-
   <licenses>
     <license>
       <name>MIT license</name>
       <comments>All source code is under the MIT license.</comments>
     </license>
   </licenses>
-
   <description>Maven pom project for the NWDI jenkins plugin family.</description>
   <url>http://github.com/weigo/NWDI-pom-Plugin.git</url>
-
   <scm>
     <connection>scm:git:git://github.com/weigo/NWDI-pom-Plugin.git</connection>
     <developerConnection>scm:git:git@github.com:weigo/NWDI-pom-Plugin.git</developerConnection>
     <url>https://github.com/weigo/NWDI-pom-Plugin</url>
   </scm>
-
   <inceptionYear>2011</inceptionYear>
   <developers>
     <developer>
@@ -44,7 +37,6 @@
       <email>Dirk.Weigenand@gmx.de</email>
     </developer>
   </developers>
-
   <dependencies>
     <dependency>
       <groupId>org.jenkins-ci.main</groupId>
@@ -81,7 +73,6 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
   <build>
     <plugins>
       <plugin>
@@ -175,7 +166,7 @@
             <excludeFilterFile>findbugs-exclusion-filter.xml</excludeFilterFile>
           </configuration>
         </plugin>
-        <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+        <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself. -->
         <plugin>
           <groupId>org.eclipse.m2e</groupId>
           <artifactId>lifecycle-mapping</artifactId>
@@ -192,6 +183,7 @@
                       <goal>validate</goal>
                       <goal>resolve-test-dependencies</goal>
                       <goal>insert-test</goal>
+                      <goal>test-hpl</goal>
                     </goals>
                   </pluginExecutionFilter>
                   <action>
@@ -205,7 +197,6 @@
       </plugins>
     </pluginManagement>
   </build>
-
   <distributionManagement>
     <repository>
       <id>releases</id>
