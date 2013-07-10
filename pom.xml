@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.jenkins-ci.plugins</groupId>
     <artifactId>plugin</artifactId>
-    <version>1.466</version>
+    <version>1.509</version>
   </parent>
   <groupId>org.arachna.netweaver</groupId>
   <artifactId>NWDI-pom-Plugin</artifactId>
@@ -15,6 +15,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <NWDI-config-plugin.version>1.0.1-SNAPSHOT</NWDI-config-plugin.version>
+    <java.source.version>1.6</java.source.version>
   </properties>
   <licenses>
     <license>
@@ -22,7 +23,7 @@
       <comments>All source code is under the MIT license.</comments>
     </license>
   </licenses>
-  <description>Maven pom project for the NWDI jenkins plugin family.</description>
+  <description>Maven pom project for the NWDI Jenkins plugin family.</description>
   <url>http://github.com/weigo/NWDI-pom-Plugin.git</url>
   <scm>
     <connection>scm:git:git://github.com/weigo/NWDI-pom-Plugin.git</connection>
@@ -38,19 +39,6 @@
     </developer>
   </developers>
   <dependencies>
-    <dependency>
-      <groupId>org.jenkins-ci.main</groupId>
-      <artifactId>jenkins-core</artifactId>
-      <version>1.466</version>
-      <type>pom</type>
-      <scope>provided</scope>
-      <exclusions>
-        <exclusion>
-          <artifactId>junit</artifactId>
-          <groupId>junit</groupId>
-        </exclusion>
-      </exclusions>
-    </dependency>
     <dependency>
       <groupId>org.hamcrest</groupId>
       <artifactId>hamcrest-core</artifactId>
@@ -87,8 +75,8 @@
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
-          <source>1.6</source>
-          <target>1.6</target>
+          <source>${java.source.version}</source>
+          <target>${java.source.version}</target>
           <compilerArgument>-g</compilerArgument>
           <compilerArgument>-Xlint:unchecked</compilerArgument>
           <debuglevel>lines,vars,source</debuglevel>
@@ -140,7 +128,7 @@
             <rulesets>
               <ruleset>pmd-configuration.xml</ruleset>
             </rulesets>
-            <targetJdk>1.6</targetJdk>
+            <targetJdk>${java.source.version}</targetJdk>
             <excludeRoots>
               <excludeRoot>target/generated-sources/localizer</excludeRoot>
             </excludeRoots>
